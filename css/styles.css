@@ -73,10 +73,14 @@ img {
   padding-bottom: 94px;
 }
 /* __________________________________________шапка сайта студии__________________________________________________________ */
-header {
+.header {
   border-bottom: 1px solid #ececec;
 }
 .logo {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
   font-family: raleway, sans-serif;
   color: var(--accent-tex-color);
   font-weight: 700;
@@ -84,13 +88,14 @@ header {
   line-height: 1.19;
 }
 
-.logo-header-end {
+.header__logo--end {
   color: var(--primary-black-color);
 }
-.logo-footer-end {
+.footer-logo--end {
   color: var(--primary-white-color);
 }
-.logo-footer {
+.footer__logo {
+  padding: 0;
   margin-bottom: 20px;
 }
 /* ___________________________________________навигация___________________________________________________________ */
@@ -101,22 +106,15 @@ header {
   display: flex;
   align-items: center;
 }
-
-.main-nav .link {
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
 .site-nav {
   display: flex;
   margin-left: 95px;
 }
-.contacts .item + .item,
-.site-nav .item + .item {
+.contacts__item + .contacts__item,
+.site-nav__item + .site-nav__item {
   margin-left: 50px;
 }
-.site-nav .link {
+.site-nav__link {
   position: relative;
   display: block;
   padding-top: 32px;
@@ -135,7 +133,7 @@ header {
   margin-left: auto;
 }
 
-.contacts .link {
+.contacts__link {
   display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -149,21 +147,21 @@ header {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-contact {
+.contacts__icon {
   margin-right: 10px;
   fill: currentColor;
 }
-.site-nav .current,
-.site-nav .link:hover,
-.site-nav .link:focus,
-.contacts .link:hover,
-.contacts .link:focus,
+.site-nav__link--current,
+.site-nav__link:hover,
+.site-nav__link:focus,
+.contacts__link:hover,
+.contacts__link:focus,
 .adress-contacts .link:hover,
 .adress-contacts .link:focus {
   color: var(--accent-tex-color);
 }
 
-.current::after {
+.site-nav__link--current::after {
   content: "";
 
   display: block;
@@ -201,7 +199,7 @@ header {
   background-size: cover;
 }
 
-.hero-title {
+.hero__title {
   margin-top: 0;
   margin-bottom: 30px;
 
@@ -215,7 +213,7 @@ header {
 
 /* _____________________________________основная информация страницы__________________________________________ */
 /* ____________секция преимущества компании________________ */
-.section-title {
+.section__title {
   margin-top: 0;
   margin-bottom: 50px;
 
@@ -225,7 +223,7 @@ header {
   line-height: 1.16;
   text-align: center;
 }
-.advantage-icon {
+.advantage__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,14 +239,14 @@ header {
 .advantage {
   display: flex;
 }
-.advantage .item {
+.advantage__item {
   width: 270px;
   margin-right: 30px;
 }
-.advantage .item:nth-child(4n) {
+.advantage__item:nth-child(4n) {
   margin-right: 0;
 }
-.advantage-title {
+.advantage__title {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -258,7 +256,7 @@ header {
   line-height: 1.14;
   text-transform: uppercase;
 }
-.advantage-text {
+.advantage__text {
   margin-top: 0;
   margin-bottom: 0;
 
@@ -266,23 +264,23 @@ header {
   line-height: 1.71;
 }
 /* ____________________секция чем занимается компания______________ */
-.specialization-section {
+.section--zeropadding {
   padding-top: 0px;
 }
 .specialization {
   display: flex;
 }
-.specialization .item {
+.specialization__item {
   width: 370px;
   margin-right: 30px;
 }
-.specialization .item:nth-child(3n) {
+.specialization__item:nth-child(3n) {
   margin-right: 0;
 }
-.specialization-thumb {
+.specialization__thumb {
   position: relative;
 }
-.specialization-overlay {
+.specialization__overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -301,15 +299,18 @@ header {
 
   color: var(--primary-white-color);
 }
-.spec-overlay-text {
+.specialization__text {
   margin: 0;
 }
 /* __________________________секция наша команда___________________ */
+.section--bcg {
+  background-color: var(--secondary-background-color);
+}
 .team {
   display: flex;
   text-align: center;
 }
-.team .item {
+.team__item {
   width: 270px;
   margin-right: 30px;
 
@@ -319,14 +320,14 @@ header {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team .item:nth-child(4n) {
+.team__item:nth-child(4n) {
   margin-right: 0;
 }
 
-.team-text {
+.team__text {
   padding: 30px 32px;
 }
-.team-title {
+.team__title {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -335,7 +336,7 @@ header {
   font-size: 16px;
   line-height: 1.18;
 }
-.team-profession {
+.team__profession {
   margin-top: 0;
   margin-bottom: 16px;
 
@@ -344,12 +345,19 @@ header {
   text-align: center;
 }
 
-.team-icons {
+.sotial-icons {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
+.sotial-icons__item {
+  margin-right: 10px;
 }
 
-.team-icon-link {
+.sotial-icons__item:nth-child(4) {
+  margin-right: 0;
+}
+
+.sotial-icons__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -362,32 +370,35 @@ header {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-icon-link:hover,
-.team-icon-link:focus {
+
+.sotial-icons__link--color {
+  color: var(--primary-white-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sotial-icons__link:hover,
+.sotial-icons__link:focus {
   background-color: var(--accent-tex-color);
   color: var(--primary-white-color);
 }
-.team-icon {
+.sotial-icons__icon {
   fill: currentColor;
 }
 
-.our-team {
-  background-color: var(--secondary-background-color);
-}
 /* _____________________________секция клиенты компании_____________________ */
-.clients-list {
+.company-logo {
   display: flex;
 }
-.company-logo {
+.company-logo__item {
   color: var(--icons-color);
   margin-right: 30px;
 }
 
-.company-logo:nth-child(6) {
+.company-logo__item:nth-child(6) {
   margin-right: 0;
 }
 
-.company-logo-link {
+.company-logo__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,13 +411,13 @@ header {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.company-logo-link:hover,
-.company-logo-link:focus {
+.company-logo__link:hover,
+.company-logo__link:focus {
   color: var(--accent-tex-color);
   border-color: var(--accent-tex-color);
 }
 
-.company-logo-icon {
+.company-logo__icon {
   fill: currentColor;
 }
 
@@ -417,7 +428,7 @@ header {
 
   margin-bottom: 50px;
 }
-.portfolio-buttons .item + .item {
+.portfolio-buttons__item + .portfolio-buttons__item {
   margin-left: 8px;
 }
 /* __________________________проекты_____________________ */
@@ -427,31 +438,31 @@ header {
   margin-left: -30px;
   margin-top: -30px;
 }
-.project .item {
+.project__item {
   flex-basis: 370px;
   margin-left: 30px;
   margin-top: 30px;
 }
-.project-link {
+.project__link {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.project-link:hover,
-.project-link:focus {
+.project__link:hover,
+.project__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.project-thumb {
+.project__thumb {
   display: block;
   position: relative;
   overflow: hidden;
 }
 
-.project-link:hover .project-thumb-text,
-.project-link:focus .project-thumb-text {
+.project__link:hover .project__thumb-overlay,
+.project__link:focus .project__thumb-overlay {
   transform: translateY(0);
 }
-.project-thumb-text {
+.project__thumb-overlay {
   display: block;
   position: absolute;
   top: 0;
@@ -465,14 +476,14 @@ header {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.thumb-text {
+.project__thumb-text {
   margin: 0;
   color: var(--primary-white-color);
   font-size: 18px;
   line-height: 1.55;
 }
 
-.project-text {
+.project__text {
   padding: 20px 24px;
 
   border-width: 0 1px 1px 1px;
@@ -480,7 +491,7 @@ header {
   border-color: var(--project-border-color);
 }
 
-.project-title {
+.project__title {
   margin-top: 0;
   margin-bottom: 4px;
 
@@ -490,7 +501,7 @@ header {
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.project-type {
+.project__type {
   margin-top: 0;
   margin-bottom: 0;
 
@@ -506,16 +517,12 @@ header {
   background-color: var(--hero-footer-background-color);
 }
 
-.footer-content {
+.footer__container {
   display: flex;
   align-items: baseline;
 }
 .footer-adress {
   margin-right: 70px;
-}
-
-.footer-adress .link {
-  display: block;
 }
 
 .adress {
@@ -524,18 +531,18 @@ header {
   font-size: 14px;
   line-height: 1.71;
 }
-.adress-location {
+.adress__text {
   margin-top: 0px;
   margin-bottom: 10px;
 }
-.footer-mail {
+.adress__item {
   margin-bottom: 10px;
 }
-.footer-tel {
+.adress__item:last-child {
   margin-bottom: 0;
 }
 
-.adress-contacts .link {
+.adress__link {
   color: var(--footer-adress-color);
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -544,7 +551,7 @@ header {
   width: 206px;
 }
 
-.footer-social-links-text {
+.footer-label {
   margin-top: 0;
   margin-bottom: 20px;
 
@@ -555,47 +562,14 @@ header {
   color: var(--primary-white-color);
 }
 
-.footer-social-icons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-icon-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  color: var(--primary-white-color);
-  background-color: rgba(255, 255, 255, 0.1);
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  border-radius: 50%;
-}
-.footer-icon-link:hover,
-.footer-icon-link:focus {
-  background-color: var(--accent-tex-color);
-}
-.social-icon {
-  fill: currentColor;
-}
 .footer-Mailing {
-  display: flex;
   width: 570px;
-  height: 86px;
   margin-left: auto;
-  flex-direction: row;
-  align-items: flex-end;
 }
-
 .footer-form {
   display: flex;
-  flex-direction: column;
-  width: 100%;
 }
-
-.footer-input {
+.footer-form__input {
   padding: 15px 16px;
   margin-right: 12px;
   flex-basis: 100%;
@@ -606,7 +580,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
-.footer-form input::placeholder {
+.footer-form__input::placeholder {
   line-height: 1.25;
   color: var(--footer-adress-color);
 }
@@ -640,7 +614,7 @@ header {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.hero-button.button {
+.hero-button {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -658,8 +632,8 @@ header {
   background-color: var(--accent-tex-color);
   color: var(--primary-white-color);
 }
-.hero-button.button:hover,
-.hero-button.button:focus {
+.hero-button:hover,
+.hero-button:focus {
   background-color: var(--hero-button-hover-color);
 }
 /* ____________модальное окно___________________ */
@@ -726,7 +700,7 @@ header {
   fill: var(--accent-tex-color);
 }
 
-.form-text {
+.form__text {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -736,12 +710,12 @@ header {
   margin-bottom: 12px;
   color: #212121;
 }
-.form-field {
+.form__field {
   display: block;
   position: relative;
   margin-bottom: 10px;
 }
-.form-label {
+.form__label {
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.16;
@@ -749,7 +723,7 @@ header {
   color: var(--pimary-tex-color);
 }
 
-.form-input {
+.form__input {
   display: block;
   width: 100%;
   padding-left: 42px;
@@ -761,20 +735,19 @@ header {
 
   transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-input:focus {
+.form__input:focus {
   outline-color: var(--accent-tex-color);
 }
 
-.form-input:focus ~ .form-icon {
+.form__input:focus ~ .form__icon {
   fill: var(--accent-tex-color);
 }
 
-.form-icon {
+.form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
   /* transform: translateY(-50%); */
-
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -802,9 +775,6 @@ textarea:focus {
 }
 
 .form-field-comment textarea::placeholder {
-  font-size: 12px;
-  line-height: 1.14;
-  letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 .form-checkbox {
@@ -816,7 +786,7 @@ textarea:focus {
   font-size: 14px;
   line-height: 1.71;
 }
-.checkbox {
+.form-checkbox__input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -830,7 +800,7 @@ textarea:focus {
   overflow: hidden;
 }
 
-.checkbox-icon {
+.form-checkbox__icon {
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -841,14 +811,14 @@ textarea:focus {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.checkbox:hover + .checkbox-icon,
-.checkbox:focus-visible + .checkbox-icon {
+.form-checkbox__input:hover + .form-checkbox__icon,
+.form-checkbox__input:focus-visible + .form-checkbox__icon {
   border-color: var(--accent-tex-color);
 }
-.checkbox:checked + .checkbox-icon {
+.form-checkbox__input:checked + .form-checkbox__icon {
   background-color: var(--accent-tex-color);
   border-color: var(--accent-tex-color);
 }
-.checkbox-agreement {
+.form-checkbox__agreement {
   color: var(--accent-tex-color);
 }
