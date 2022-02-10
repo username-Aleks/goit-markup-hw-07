@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body>
     <!--шапка сайта студии-->
@@ -55,12 +55,10 @@
     </header>
     <main>
         <!--герой-->
-        <div class="container">
-            <section class="hero overlay">
-                <h1 class="hero__title">Эффективные решения <br> для вашего бизнеса</h1>
-                <button data-modal-open class="button hero-button" type="button">Заказать услугу</button>
-            </section>
-        </div>        
+        <section class="hero overlay">
+            <h1 class="hero__title">Эффективные решения <br> для вашего бизнеса</h1>
+            <button data-modal-open class="button hero-button" type="button">Заказать услугу</button>
+        </section>  
         <!--секция преимущества компании-->
         <section class="section">
             <div class="container">
@@ -72,7 +70,7 @@
                                 <use href="images/sprite.svg#antenna"></use>
                             </svg>
                         </div>
-                        <h3 class="advantage-__title">Внимание к деталям</h3>
+                        <h3 class="advantage__title">Внимание к деталям</h3>
                         <p class="advantage__text">Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
                     </li>
                     <li class="advantage__item">
@@ -81,8 +79,8 @@
                                 <use href="images/sprite.svg#clock"></use>
                             </svg>
                         </div>
-                        <h3 class="advantage-title">Пунктуальность</h3>
-                        <p class="advantage-text">Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
+                        <h3 class="advantage__title">Пунктуальность</h3>
+                        <p class="advantage__text">Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
                         </p>
                     </li>                    
                     <li class="advantage__item">
@@ -322,7 +320,7 @@
     <footer class="footer">
         <div class="footer__container container">
             <div class="footer-adress">
-                <a class="logo footer__logo link" href="./index.html">Web<span class="footer-logo--end">Studio</span></a>
+                <a class="logo footer__logo link" href="./index.html">Web<span class="footer__logo--end">Studio</span></a>
                 <address class="adress">
                     <p class="adress__text">г. Киев, пр-т Леси Украинки, 26</p>
                     <ul class="adress__list list">

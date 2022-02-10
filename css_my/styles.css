@@ -87,17 +87,17 @@ img {
   font-size: 26px;
   line-height: 1.19;
 }
-
-.header__logo--end {
-  color: var(--primary-black-color);
-}
-.footer-logo--end {
-  color: var(--primary-white-color);
-}
 .footer__logo {
   padding: 0;
   margin-bottom: 20px;
 }
+.header__logo--end {
+  color: var(--primary-black-color);
+}
+.footer__logo--end {
+  color: var(--primary-white-color);
+}
+
 /* ___________________________________________навигация___________________________________________________________ */
 .header-nav {
   display: flex;
@@ -347,7 +347,6 @@ img {
 
 .sotial-icons {
   display: flex;
-  /* justify-content: space-between; */
 }
 .sotial-icons__item {
   margin-right: 10px;
